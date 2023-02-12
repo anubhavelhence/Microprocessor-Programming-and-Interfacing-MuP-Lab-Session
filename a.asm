@@ -1,14 +1,12 @@
 .model tiny
 .data
-src_str         db      03h,05h,06h,0abh,'a','A','Week3'
-ex_str          dw      0fedfh, 'a'
-dst_str         db      4 dup(?)
+src_str         db      03h,05h,06h,0abh,07h,08h,09h,10h,11h,12h
+dst_str         db      10 dup(?)
 .code
 .startup
-                lea     si,ex_str
                 lea     si,src_str
                 lea     di,dst_str
-                mov     cx,04h
+                mov     cx,0ah
           rep   movsb
 .exit
 end

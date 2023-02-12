@@ -1,17 +1,21 @@
 .model tiny
 .data
-data1 db '[',']','*'
-data2 dw 9876h, 'a', 'A', '0'
-data3 dw 0fefeh
-array dw 01,02,03,04,05,06,07,08,09
-
+src_str         db      03h,05h,06h,0abh,07h,08h,09h,10h,11h,12h
+dst_str         db      10 dup(?)
 .code
 .startup
-    mov BX,data2
-    mov CX,data3
-    mov data1,BL
-    mov DL,data1
-    mov DI,0002h
-    mov AX,array[DI]
+                lea     si,src_str
+                lea     di,dst_str
+                mov     cx,0ah
+                mov     ax,00h
+        x1:     mov     al,[si]
+                mov     [di],al
+                inc     si
+                inc     di
+                dec     cx
+                cmp     cx,00h
+                jne     x1
 .exit
 end
+
+
