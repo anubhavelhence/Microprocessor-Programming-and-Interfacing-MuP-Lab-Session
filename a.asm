@@ -1,6 +1,6 @@
 .model tiny
 .data
-src_str         db      03h,05h,06h,0abh,'a','A'
+src_str         db      03h,05h,06h,0abh,'a','A','Week3'
 ex_str          dw      0fedfh, 'a'
 dst_str         db      4 dup(?)
 .code
