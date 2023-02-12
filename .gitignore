@@ -1,0 +1,30 @@
+# .gitignore file for ignoring executable files
+*.exe
+*.com
+
+# Ignore temporary files
+*.tmp
+
+# Ignore object files
+*.obj
+*.code-workspace
+*.doc
+*.ico
+*.386
+*.dll
+*.sys
+*.inc
+*.err
+*.set
+*.bat
+MASM*
+*.lst
+*.c
+*.ini
+*.xxt
+*.mxt
+*.pif
+*.key
+*.ord
+*.fon
+*.
