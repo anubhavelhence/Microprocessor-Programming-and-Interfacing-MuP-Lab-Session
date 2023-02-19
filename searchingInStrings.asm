@@ -19,6 +19,7 @@ searchLoop:
 found:
     sub     di, offset myString ; calculate the index of the found byte in the string
     mov     bx, di
+    dec     bx
     lea     si, res
     mov     [si],bx; Do something with the index, for example print it out
 ;     ; ...
