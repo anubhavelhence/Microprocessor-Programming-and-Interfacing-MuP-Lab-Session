@@ -1,15 +1,21 @@
-CS/EEE/INSTR F241 Microprocessor Programming and Interfacing
+# Microprocessor Programming and Interfacing for CS/EEE/INSTR F241
 
-#1 Lab 4 - String Operations
+To access Week 4 lab sheet in book format : [Labsheet](https://designrr.page/?id=162767&token=4006129289&h=2646 )
 
+This repository contains resources and code examples for the Microprocessor Programming and Interfacing course offered to CS/EEE/INSTR F241 students. The course covers the basics of microprocessor architecture, programming, and interfacing with various input/output devices.
 
-Dr. Vinay Chamola and Anubhav Elhence
+## Course Outline
 
-Lab 3 - String
+The course is divided into the following modules:
 
-**String Operations![](Aspose.Words.70fb45e0-c961-443f-99cf-35a063f2107c.004.png)**
+- Week 1 - Basics of DebugX
+- Week 2 - Data storage in ALP
+- Week 3 - Control Flow in ALP
+- Week 4 - String OPerations in ALP
 
-**What are LODSB, LODSW and LODSD instructions?**
+Each module has its own set of lecture notes, code examples, and lab assignments. The lab assignments are designed to provide hands-on experience with microprocessor programming and interfacing.
 
+## Contributions
+Contributions to this repository are welcome. If you find any issues or have any suggestions for improvement, please feel free to open an issue or submit a pull request.
 
 
