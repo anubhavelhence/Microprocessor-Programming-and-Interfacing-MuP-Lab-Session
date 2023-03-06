@@ -1,16 +1,17 @@
 .model tiny
-.486
 .data
-max1 db 32
-act1 db ?
-inp1 db 32 dup(0)
+fname	db 'test.txt',0
+handle	dw ?
 .code
 .startup
-
-    lea DX, max1
-    mov ah, 0ah
-    int 21h
-
+	mov ah, 3ch
+	lea dx, fname
+	mov cl, 1h
+	int 21h
+	mov handle, ax
 .exit
 end
+
+
+
 
