@@ -1,6 +1,6 @@
 # Microprocessor Programming and Interfacing for CS/EEE/INSTR F241
 
-To access Week 7 lab sheet in book format : [Labsheet Week7](https://designrr.page/?id=169591&token=2109544260&h=3144 )
+To access Week 7 lab sheet in book format  : [Labsheet Week7](https://designrr.page/?id=169591&token=2109544260&h=3144 )
 
 
 This repository contains resources and code examples for the Microprocessor Programming and Interfacing course offered to CS/EEE/INSTR F241 students. The course covers the basics of microprocessor architecture, programming, and interfacing with various input/output devices.
