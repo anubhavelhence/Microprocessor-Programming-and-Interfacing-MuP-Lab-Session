@@ -17,6 +17,7 @@ The course is divided into the following modules:
 - Week 6 - File Operations in DebugX
 - Week 7 - Advanced Operations using Interrupts
 - Week 8 - BIOS Interrupts for Display
+- Week 9 - Advanced BIOS Interrupts for Display
 
 
 Each module has its own set of lecture notes, code examples, and lab assignments. The lab assignments are designed to provide hands-on experience with microprocessor programming and interfacing.
