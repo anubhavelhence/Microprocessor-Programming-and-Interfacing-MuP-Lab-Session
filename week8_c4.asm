@@ -1,13 +1,13 @@
 ; This code is written in 16-bit x86 assembly language and uses BIOS interrupt calls for displaying a string
-; with custom vertical spacing on the screen. It requires an assembler like NASM for compilation.
+; with custom vertical spacing on the screen. It requires an assembler like MASM for compilation.
 
 .model tiny ; Set memory model to tiny (code and data in one segment)
 .386 ; Target 80386 processor
 
 .data ; Data segment
-inp1 db 'MyName' ; Define a byte array 'inp1' containing the input string 'MyName'
+inp1 db 'Anubhav' ; Define a byte array 'inp1' containing the input string 'MyName'
 colmstr dw ? ; Define a word 'colmstr' to store the column position of the next character
-cnt db 06h ; Define a byte 'cnt' containing the length of the input string (6 characters)
+cnt db 07h ; Define a byte 'cnt' containing the length of the input string (6 characters)
 
 .code ; Code segment
 .startup ; Executable code starts here
@@ -49,7 +49,8 @@ cnt db 06h ; Define a byte 'cnt' containing the length of the input string (6 ch
     POP CX ; Restore count value from the stack
 
     ; CHANGING VERTICES
-    ; Increment the input string pointer, column position, and decrement the length counter
+    ; Increment the input string pointer, column position,
+    ; and decrement the length counter
     INC SI
     INC WORD PTR[DI]
     DEC CL
