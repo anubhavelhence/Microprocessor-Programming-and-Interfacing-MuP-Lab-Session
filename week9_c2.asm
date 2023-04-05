@@ -11,48 +11,48 @@ cnt db ?
 .code
 .startup
 
-    ;SET DISPLAY MODE
+    ; Set display mode to 640x480 16 colors
     MOV AH, 00H
     MOV AL, 12H
     INT 10H
 
-    ;SETTING CURSOR POS
+    ; Set cursor position to (20, 20)
     MOV AH, 02H
     MOV DH, 20
     MOV DL, 20
     MOV BH, 00
     INT 10H
 
-    ;INITIALISING PARAMETERS
+    ; Initialize parameters for box drawing
     MOV rowstr, 10
     MOV rowend, 410
     MOV colmstr, 10
     MOV colmend, 210
     MOV cnt, 00
 
-    ;PAINTING FIRST BOX
+    ; Paint the first box
     PAINT1:
-    MOV SI, rowstr ; ROW START
+    MOV SI, rowstr ; Row start
     COLM1:
-    MOV CX, colmend ; COLM END
+    MOV CX, colmend ; Column end
     ROW1:
     DEC CX
     MOV DI, CX
     PUSH CX
     MOV AH, 0Ch
-    MOV AL, 1111b
+    MOV AL, 1111b ; Color for first box
     MOV CX, DI
     MOV DX, SI
     INT 10h
     POP CX
-    CMP CX, colmstr ; COLM START
+    CMP CX, colmstr ; Column start
     JNZ ROW1
     INC SI
-    MOV AX, rowend ; ROW END
+    MOV AX, rowend ; Row end
     CMP SI, AX
     JNZ COLM1
 
-    ;CHANGING VERTICES
+    ; Change vertices for the next box
     LEA SI, rowstr
     ADD WORD PTR[SI], 10
     LEA SI, rowend
@@ -67,30 +67,30 @@ cnt db ?
     MOV AL, 07h
     MOV BL, cnt
     CMP BL, AL
-    JGE TERM
+    JGE TERM ; Terminate if cnt >= 7
 
-    ;PAINTING SECOND BOX
-    MOV SI, rowstr ; ROW START
+    ; Paint the second box
+    MOV SI, rowstr ; Row start
     COLM2:
-    MOV CX, colmend ; COLM END
+    MOV CX, colmend ; Column end
     ROW2:
     DEC CX
     MOV DI, CX
     PUSH CX
     MOV AH, 0Ch
-    MOV AL, 1100b
+    MOV AL, 1100b ; Color for second box
     MOV CX, DI
     MOV DX, SI
     INT 10h
     POP CX
-    CMP CX, colmstr ; COLM START
+    CMP CX, colmstr ; Column start
     JNZ ROW2
     INC SI
-    MOV AX, rowend ; ROW END
+    MOV AX, rowend ; Row end
     CMP SI, AX
     JNZ COLM2
 
-    ;CHANGING VERTICES
+    ; Change vertices for the next box
     LEA SI, rowstr
     ADD WORD PTR[SI], 10
     LEA SI, rowend
@@ -102,16 +102,16 @@ cnt db ?
     LEA SI, cnt
     INC BYTE PTR[SI]
 
-    JMP PAINT1
+    JMP PAINT1 ; Continue painting boxes
 
     END1:
     MOV AH, 07H
     INT 21h
     CMP AL, "%"
-    JNZ END1
+    JNZ END1 ; Loop until '%' is received
 
     TERM:
-    MOV AH, 4CH
+    MOV AH, 4CH ; Terminate program
     INT 21H
 
 .exit

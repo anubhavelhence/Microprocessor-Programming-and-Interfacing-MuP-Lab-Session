@@ -16,10 +16,10 @@ cnt db ?
     MOV AL, 12H
     INT 10H
 
-    ; Set cursor position to (20, 20)
+    ; Set cursor position to (25, 25)
     MOV AH, 02H
-    MOV DH, 25
-    MOV DL, 25
+    MOV DH, 10
+    MOV DL, 10
     MOV BH, 00
     INT 10H
 
